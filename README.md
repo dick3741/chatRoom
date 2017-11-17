@@ -24,7 +24,7 @@ a chatroom with websocket(socket.io) and node
 - 使用到的语法：socket.io双工
 
 Server (server2.js)
-```
+```javascript
 var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
@@ -52,7 +52,7 @@ io.on('connection', function (socket) {
 });
 ```
 Client (2.html)
-```
+```javascript
 <script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io('http://localhost');
@@ -61,4 +61,34 @@ Client (2.html)
     socket.emit('my other event', { my: 'data' });
   });
 </script>
+```
+
+
+
+---
+
+### 数据库
+
+4大基本语句——增删改查
+
+```javascript
+增
+  INSERT INTO 表 (字段列表) VALUES(值)
+
+  INSERT INTO user_table (username,password,online) VALUES('zhangsan','111111',0);
+
+删
+  DELETE FROM 表 WHERE 条件
+
+  DELETE FROM user_table WHERE ID=3;
+
+改
+  UPDATE 表 SET 字段=新值,字段=新值,... WHERE 条件
+
+  UPDATE user_table SET password='111111' WHERE ID=2;
+
+查
+  SELECT 字段列表 FROM 表 WHERE 条件
+
+  SELECT username,online FROM user_table WHERE ID=1;
 ```
