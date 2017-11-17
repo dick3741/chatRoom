@@ -1,10 +1,16 @@
 # chatRoom
-a chatroom with websocket(socket.io) and node
+> 使用两种方法实现的聊天室
+
+功能：
+
+1. 用户注册、登陆
+2. 发言->其他人
+3. 离线消息
 
 ---
-依赖：`cnpm install`——socket.io、mysql、jquery
-数据库：本地链接localhost、数据库名20171113
-集成服务器环境：Wamp
+- 依赖：`cnpm install`——socket.io、mysql、jquery
+- 数据库：本地链接localhost、数据库名20171113
+- 集成服务器环境：Wamp
 
 ---
 
@@ -72,22 +78,22 @@ Client (2.html)
 4大基本语句——增删改查
 
 ```javascript
-增
+//增
   INSERT INTO 表 (字段列表) VALUES(值)
 
-  INSERT INTO user_table (username,password,online) VALUES('zhangsan','111111',0);
+  INSERT INTO user_table (username,password,online) VALUES('wangwu','987654',0);
 
-删
+//删
   DELETE FROM 表 WHERE 条件
 
   DELETE FROM user_table WHERE ID=3;
 
-改
+//改
   UPDATE 表 SET 字段=新值,字段=新值,... WHERE 条件
 
   UPDATE user_table SET password='111111' WHERE ID=2;
 
-查
+//查
   SELECT 字段列表 FROM 表 WHERE 条件
 
   SELECT username,online FROM user_table WHERE ID=1;
